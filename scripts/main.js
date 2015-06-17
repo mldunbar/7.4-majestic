@@ -4,4 +4,8 @@
   $(document).ready(function(){
     $('body').prepend(JST.application());
   });
+
+  // $("#accordion").accordion();
+
+
 })();

@@ -16,6 +16,39 @@ $base-background-color: $very-light-gray;
 
 body {
   font-family: $base-font-family;
-  background-color: green;
+  background-color: $very-light-gray;
   color: $base-font-color;
+}
+
+ul {
+	list-style: none;
+	}
+
+.all{
+  @include outer-container();
+}
+
+.header{
+}
+
+.fork {
+  @include span-columns(1 of 12);
+  height: 50px;
+
+}
+
+.store-info{
+  background-image: url(http://shotphotos.com/wp-content/uploads/2014/04/Old-Yard-with-Restaurant-Seats-and-Tables.jpg);
+  color: purple;
+}
+
+.menu {
+  @include outer-container();
+  @include span-columns(8 of 12);
+}
+
+.sidebar {
+  @include outer-container();
+  @include span-columns(3 of 12);
+  float: right;
 }
