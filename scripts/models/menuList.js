@@ -1,11 +1,13 @@
 var Menu = Backbone.Model.extend({
   idAttribute: 'id',
 
-  defaults: {
-    item: '',
-    price: 0,
-    description: '',
-    category: '',
+    defaults: function() {
+      return {
+      item: '',
+      price: 0,
+      description: '',
+      category: '',
+    };
   }
 });
 
@@ -14,4 +16,4 @@ var MenuCollection = Backbone.Collection.extend({
   model: Menu
 });
 
-export {Menu, MenuCollection};
+export default {Menu, MenuCollection};

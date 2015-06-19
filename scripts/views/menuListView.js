@@ -1,22 +1,36 @@
-export default Backbone.View.extend({
+import MenuItemView from "./menuItemView";
 
-  template: JST['menu-item'],
-  className: 'menuItem',
+export default Backbone.View.extend ({
+	template: JST['menu-categories'],
+  className: 'menuCategories',
+  tagName: 'ul',
 
-  events: {
-    'click .order': 'addOrder'
+	initialize: function(){
+		this.render();
+	},
+
+	render: function() {
+		this.$el.html(this.template());
+    this.renderChildren();
+    console.log(this);
+	},
+
+	renderChildren: function(){
+    _.invoke(this.children || [], 'remove');
+
+    this.children = this.collection.map(function(child) {
+      var view = new MenuItemView({
+        model: child
+      });
+      this.$el.append(view.el);
+      return view;
+    }.bind(this));
+
+    return this;
   },
 
-  initialize: function(){
-    this.render();
-  },
-
-  render: function(){
-    this.$el.html(this.template(this.collection.toJSON()));
-  },
-
-  addOrder: function(){
-  console.log(this);
-}
-
+  remove: function(){
+    _.invoke(this.children || [], 'remove');
+    Backbone.View.prototype.remove.apply(this, arguments);
+  }
 });
