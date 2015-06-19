@@ -29,12 +29,17 @@ ul {
 }
 
 .header{
+  background-color: $dark-gray;
+}
+
+.description-field {
+  display: inline;
 }
 
 .fork {
   @include span-columns(1 of 12);
   height: 50px;
-
+  background-image: url(http://icons.iconarchive.com/icons/archigraphs/modern-chairs/512/Fork-Seat-icon.png);
 }
 
 .store-info{
@@ -45,6 +50,7 @@ ul {
 .menu {
   @include outer-container();
   @include span-columns(8 of 12);
+  background-color: $light-gray;
 }
 
 .sidebar {
