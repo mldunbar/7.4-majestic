@@ -17,7 +17,7 @@ export default Backbone.View.extend({
   },
 
   addOrder: function(){
-  console.log(this);
+    console.log(this.model.toJSON().price);
 }
 
 });
