@@ -9,7 +9,7 @@ export default Backbone.View.extend({
   },
 
   initialize: function(options){
-    this.render();
+    this.render(options);
     this.order = options.order
   },
 
