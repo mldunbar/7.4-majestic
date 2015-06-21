@@ -12,14 +12,15 @@ import {OrderCollection} from './models/menuOrder';
 
     menuCollection.fetch().then(function(){
       var menu = new MenuListView({
+        order: orderCollection,
         collection: menuCollection
         });
-      $('.menu').prepend(menu.el);
-    });
-
-      var order = new OrderView({
-        order: orderCollection
+      $('.menu').append(menu.el);
       });
-      $('.sidebar').append(sidebar.el);
-    });
+
+      var sidebar = new OrderView({
+        collection: orderCollection
+      });
+      $('.sidebar').prepend(sidebar.el);
+  });
 })();

@@ -1,6 +1,6 @@
 export default Backbone.View.extend({
 
-  template: JST['menu-order'],
+  template: JST['menu-order-full'],
   // className: 'orderList',
   // tagName: 'div',
 

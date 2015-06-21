@@ -5,11 +5,12 @@ export default Backbone.View.extend({
   tagName: 'li',
 
   events: {
-    'click .order': 'addOrder'
+    'click #order': 'addOrder'
   },
 
-  initialize: function(){
+  initialize: function(options){
     this.render();
+    this.order = options.order
   },
 
   render: function(){
@@ -18,6 +19,8 @@ export default Backbone.View.extend({
 
   addOrder: function(){
     console.log(this.model.toJSON().price);
+    console.log(this.model.toJSON().category);
+    this.order.add(this.model);
 }
 
 });

@@ -1,3 +1,5 @@
+import {MenuCollection} from './menuList';
+
 var Order = Backbone.Model.extend({
   idAttribute: 'id',
 
