@@ -14,12 +14,12 @@ export default Backbone.View.extend({
   },
 
   render: function(){
-    this.$el.html(this.template(this.model.toJSON()));
+    this.$el.html(this.template(this.model));
   },
 
   addOrder: function(){
-    console.log(this.model.toJSON().price);
-    console.log(this.model.toJSON().category);
+    // console.log(this.model.price);
+    // console.log(this.model.category);
     this.order.add(this.model);
 }
 

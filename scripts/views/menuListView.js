@@ -18,10 +18,14 @@ export default Backbone.View.extend ({
 	renderChildren: function(){
     _.invoke(this.children || [], 'remove');
 
-    this.children = this.collection.map(function(child) {
-      var view = new MenuItemView({
-        model: child
-      });
+    _.each(this.collection.groupBy('category'), function(items, category){
+			var menuCollection = new Backbone.Collection(items);
+			var view = new MenuItemView({
+				category: category,
+				collection: menuCollection,
+				order: this.order
+			});
+
       this.$el.append(view.el);
       return view;
     }.bind(this));
