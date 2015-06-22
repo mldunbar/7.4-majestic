@@ -10,12 +10,82 @@ $dark-gray: #333;
 $medium-gray: #999;
 $light-gray: #ddd;
 $very-light-gray: #fafafa;
+$yellow: rgba(255, 255, 204, 1);
 
 $base-font-color: $dark-gray;
 $base-background-color: $very-light-gray;
 
 body {
   font-family: $base-font-family;
-  background-color: $base-background-color;
+  background-color: #ffffcc;
   color: $base-font-color;
+}
+
+ul {
+	list-style: none;
+	}
+
+.header{
+  background-color: $dark-gray;
+}
+
+.description-field {
+  display: inline;
+}
+
+.store-info{
+  background-image: url(http://www.dazzlingwallpaper.com/image/1370755465_best_red_wallpaper_6.jpg);
+  background-color: #7f0000;
+  color: white;
+  font-family: Webdings;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.store-info-list .name {
+  color: $yellow;
+  padding-top: 5%;
+  font-weight: bold;
+  font-size: 60px;
+}
+
+.store-info-list .address{
+  color: $yellow;
+}
+
+.store-info-list .rating{
+  color: $yellow;
+}
+
+.store-info-list .hours{
+  color: $yellow;
+  padding-bottom: 5%;
+}
+
+.menu {
+  @include outer-container();
+  @include span-columns(8 of 12);
+  background-color: rgba(119, 0, 4, 1);
+  color: $yellow;
+}
+
+.search-food{
+  display: block;
+}
+
+.pure-button-primary{
+  color: rgba(119, 0, 4, 1);
+  background-color: $yellow;
+  border-radius: 30px;
+}
+
+.sidebar {
+  @include outer-container();
+  @include span-columns(3 of 12);
+  float: right;
+  border: 1px solid black;
+  padding: 2% 5% 2% 5%;
+  background-color: rgba(119, 0, 4, .75);
+  color: $yellow;
+  text-align: center;
 }
